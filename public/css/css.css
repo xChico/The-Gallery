@@ -1,0 +1,20 @@
+
+img.center{
+    with: 30%;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+body {
+    background-color: lavenderblush;
+}
+
+h1{
+    margin: 20px 10px 0px;
+    padding: 0px 30px 0px 30px;
+}
+.center{
+    text-align: center;
+}
