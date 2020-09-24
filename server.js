@@ -11,6 +11,7 @@ let app = http.createServer((request, response) => {
         '.html': "text/html",
         '.js':"text/javascript",
         '.png':"image/png",
+        '.jpg': "image/jpg",
         '.css':"text/css"
     }
     if (!fs.existsSync(filePath)) {
