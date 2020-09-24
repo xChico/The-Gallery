@@ -1,15 +1,12 @@
 const Jimp = require('jimp')
-const fs = require('fs')
-
-exports.extra1=function(){ Jimp.read('/public/images/random.jpg', function (err, image) {
-    image.resize(250, 250)
-    image.getBase64(Jimp.AUTO, function(err, data) {
-        let base64Data = data.replace(/^data:image\/png;base64,/, "");
-        fs.writeFile('/public/images/new4.jpg', base64Data, 'base64', function(err) {
-            if(err) {
-                return console.log(err)
-            }
+exports.extra1 = function () {
+    Jimp.read('public/images/random.jpg', function (err, image) {
+        image.resize(250, 250)
+        image.getBase64(Jimp.AUTO, function (err, src) {
+            let img = document.createElement("img")
+            img.src = src
+            img.className = 'middle'
+            document.querySelector('div').appendChild(img)
         })
-
     })
-})}
+}
