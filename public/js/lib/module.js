@@ -44775,14 +44775,19 @@ function extend() {
 },{}],224:[function(require,module,exports){
 let extra = require('./extra')
 
-exports.obtainingArt = function(){
-    console.log('Upload any art you wish')
-    extra.extra1()
 
-
-
-
+exports.obtainingArt = function(info){
+        console.log('Upload any art you wish')
+        extra.extra1()
+        info.on('Text', function(count){
+                    console.log('event received' + (count+1))
+                }
+            )
 }
+
+
+
+
 },{"./extra":225}],225:[function(require,module,exports){
 const Jimp = require('jimp')
 exports.extra1 = function () {
@@ -44798,25 +44803,35 @@ exports.extra1 = function () {
 }
 },{"jimp":112}],226:[function(require,module,exports){
 let art = require('./art')
+let EventEmitter = require('events').EventEmitter
+let emitter = new EventEmitter()
+
 
 exports.provideText = function(){
     console.log('Art pieces will have description')
-
-
-
-
-    art.obtainingArt()
-
-
-
-
-
-
-
+    art.obtainingArt(emitter)
+    for(let x=0; x<10; x++){
+        console.log("pre-emitter")
+        emitter.emit('Text', x)
+        console.log('post-emitter')
+    }
 
 }
 
 
 
-},{"./art":224}]},{},[226])(226)
+
+
+
+
+
+
+
+
+
+
+
+
+
+},{"./art":224,"events":87}]},{},[226])(226)
 });
