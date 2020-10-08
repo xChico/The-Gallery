@@ -18,7 +18,9 @@ h1{
 .center{
     text-align: center;
 }
-
+.secondcenter{
+    text-align:center;
+}
 
 .middle{
     position:absolute;
