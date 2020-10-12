@@ -1769,26 +1769,22 @@ process.umask = function() { return 0; };
 },{}],28:[function(require,module,exports){
 const axios = require('axios')
 
-
-
-
 exports.getActivity= function(){axios.get( 'https://www.boredapi.com/api/activity'  )
     .then(function(response)
     {
         console.log( response.data.activity)
+        let span = document.createElement('span')
+        span.innerText = response.data.activity;
+        document.getElementById("innerTextOutput").appendChild(span);
 
 
+/*
+        console.log( response.data.activity)
         let span = document.createElement('span')
         span.innerText = response.data['activity']
         document.querySelector("#innerTextOutput").appendChild(span)
-
-  /*
-        let span = document.createElement('SPAN'[response.data.activity])
-        const innerTextOutput = document.querySelector("innerTextOutput")
-        innerTextOutput.value = span.innerText
 */
     }
-
 
 )
 .catch(function(error){
