@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+
+      {{#each styles}}
+          <link rel='stylesheet' href={{this}} />
+      {{/each}}
+  </head>
+  <body>
+    {{> header}}
+    <img src="/images/Front.png" alt = "front" class = "center"/>
+
+    {{{body}}}
+  </body>
+</html>

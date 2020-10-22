@@ -1,0 +1,21 @@
+
+
+<header>
+    <div class ="navbar">
+<form method ="post" action="/description/save">
+    <input type ="hidden" name="saveMethod"
+           value ="{{#if isCreate}}create{{else}}update{{/if}}"/>
+    <p>
+        Key:{{descriptionKey}}
+        <input type ="hidden" name ="descriptionKey" value ="{{descriptionKey}}"   />
+    </p>
+    <p>
+        Title:<input type ="text" name ="title" value="{{descriptionTitle}}" /><br/>
+    </p>
+    <textarea rows = 5 cols =40 name ="body">{{descriptionBody}}</textarea><br/>
+    <input type ="submit" value = "Submit"/>
+
+
+</form>
+    </div>
+</header>
