@@ -6,7 +6,7 @@ router.get('/', async function(req, res, next) {
   let options = {
     'name': 'The Gallery App',
     'title': 'The Gallery',
-    'styles': ['/stylesheets/second.css', '/stylesheets/style.css']
+    styles: ['/assets/stylesheets/second.css', '/assets/stylesheets/style.css']
 
   }
 

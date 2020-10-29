@@ -1,11 +1,10 @@
+<div class="container-fluid">
+    <div class="row justify-content-center mt-2">
 
-
-<header>
-    <div class ="navbar">
-<ul>
-    {{#each descriptionList}}
-        <li>{{ key }}:<a href="/description/view?key={{ key }}">{{ title }}</a></li>
-    {{/each}}
-</ul>
+        <ul>
+            {{#each descriptionList}}
+                <li>{{ key }}:<a href="/description/view?key={{ key }}">{{ title }}</a></li>
+            {{/each}}
+        </ul>
     </div>
-</header>
+</div>

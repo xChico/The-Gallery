@@ -1,21 +1,43 @@
 
 
-<header>
-    <div class ="navbar">
-<form method ="post" action="/description/save">
-    <input type ="hidden" name="saveMethod"
-           value ="{{#if isCreate}}create{{else}}update{{/if}}"/>
-    <p>
-        Key:{{descriptionKey}}
-        <input type ="hidden" name ="descriptionKey" value ="{{descriptionKey}}"   />
-    </p>
-    <p>
-        Title:<input type ="text" name ="title" value="{{descriptionTitle}}" /><br/>
-    </p>
-    <textarea rows = 5 cols =40 name ="body">{{descriptionBody}}</textarea><br/>
-    <input type ="submit" value = "Submit"/>
 
+<form method ="post", action="/description/save" class="mt-2">
+    <div class="container-fluid">
+        <input type ="hidden" name="saveMethod"
+               value ="{{#if isCreate}}create{{else}}update{{/if}}"/>
 
-</form>
+        <div class="form-group row justify-content-center mt-2">
+            <div class="col-2 text-right font-weight-bold">
+                <label class="col-form-label" for="key">Key:</label>
+            </div>
+            <div class=" row justify-content-center">
+                <label class="col-form-label" name="key">{{descriptionKey}}</label>
+
+                <input type="hidden" name ="descriptionKey" value ="{{descriptionKey}}"/>
+            </div>
+        </div>
+
+        <div class="form-group row justify-content-center">
+            <div class="col-2 text-right font-weight-bold">
+                <label class="col-form-label" for="title">Title:</label>
+
+            </div>
+            <div class="col-9">
+
+                <input class="form-control" type="text" name="title"value="{{descriptionTitle}}"><br/>
+
+            </div>
+        </div>
+        <div class="form-group row justify-content-center">
+            <textarea class="col-11 form-control" rows=5 name="body">{{descriptionBody}}</textarea><br/>
+        </div>
+        <div class="form-group row justify-content-center">
+            <input class="col-2" type="submit" value="Submit"/>
+        </div>
     </div>
-</header>
+</form>
+
+
+
+
+

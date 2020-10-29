@@ -1,8 +1,25 @@
-<header>
-    <h1>{{title}}</h1>
-    <div class ="navbar">
-        <p>
-            <a href="/">Home </a> | <a href="/description/add">Add Description</a> | <a href="/description/view_all">View All Descriptions</a>
-        </p>
+
+
+    <div class="container-fluid">
+        <h1 class="justify-content-center">{{title}}</h1>
     </div>
-</header>
+    <nav class="navbar navbar-light justify-content-center" style="background-color:#ffe5ed">
+        <div class="container-fluid">
+            <a class="nav-item nav-link active" href="/"><i data-feather="home"></i></a>
+
+            <button class="navbar-toggler" type="button"
+                    data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle Navigation">
+                    <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <a class="nav-item nav-link active" href="/description/add"><i data-feather="edit-2"></i></a>
+            <a class="nav-item nav-link active" href="/description/view_all"><i data-feather="list"></i></a>
+            </div>
+        </div>
+    </nav>
+
+
+

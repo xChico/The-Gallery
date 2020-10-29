@@ -8,7 +8,7 @@ router.get('/add', async (req, res, next) =>{
             isCreate: true,
             title: 'Add Description',
             descriptionKey: await descriptionStore.count(),
-            styles: ['/stylesheets/second.css', '/stylesheets/style.css']
+            styles: ['/assets/stylesheets/second.css', '/assets/stylesheets/style.css']
         })
     }catch (err){
         next(err)
@@ -36,7 +36,7 @@ router.get('/view', async(req, res, next )=>{
             descriptionTitle: description.title,
             descriptionKey: description.key,
             descriptionBody: description.body,
-            styles: ['/stylesheets/second.css', '/stylesheets/style.css']
+            styles: ['/assets/stylesheets/second.css', '/assets/stylesheets/style.css']
         })
     }
     catch(err){
@@ -54,7 +54,7 @@ router.get('/edit', async (req, res, next )=>{
             descriptionTitle: description.title,
             descriptionKey: description.key,
             descriptionBody: description.body,
-            styles: ['/stylesheets/second.css', '/stylesheets/style.css']
+            styles: ['/assets/stylesheets/second.css', '/assets/stylesheets/style.css']
         })
     }
     catch(err){
@@ -73,8 +73,7 @@ router.get('/view_all', async (req, res, next)=>{
         res.render('view_all_description', {
             descriptionList: exctractDescriptionToLiteral(allDescription),
             title: 'View Entries',
-            styles: ['/stylesheets/second.css', '/stylesheets/style.css']
-
+            styles: ['/assets/stylesheets/second.css', '/assets/stylesheets/style.css']
         })
     }
     catch(err){
