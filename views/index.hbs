@@ -1,12 +1,22 @@
-
-
-<ul>
+<div class="container-fluid">
     {{#each descriptionList}}
-        <li> {{key}}: <a href="/description/view?key= {{key}}">{{title}} </a></li>
+        <div class="row row-col-8">
+            <div class ="col-8 col-md-5 border border-dark">
+                {{key}}, <a href="/description/view?key= {{key}}">{{title}} </a>
+
+            </div>
+        </div>
+
+
     {{/each}}
-</ul>
+
+</div>
 
 
+
+<div class="container-fluid m-2">
+    {{>user_messages}}
+</div>
 
 
 

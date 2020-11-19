@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{title}}</title>
+    <title>{{tname}}</title>
 
-      <meta charset="UTF-8">
-      <meta name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css"/>
-      <script src="/assets/vendor/jquery/jquery.min.js"></script>
-      <script src="/assets/vendor/popper.js/popper.min.js"></script>
-      <script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-      {{#each styles}}
-
-          <link rel='stylesheet' href={{this}} />
-      {{/each}}
-
-
-  </head>
   <body>
-    {{> header}}
-    <img src="/assets/images/Front.png" alt = "front" class = "center mt-1"/>
+  {{> header}}
+<!--  <img src="/assets/images/Front.png" alt = "front" class = "center mt-1"/>-->
 
-    {{{body}}}
+  {{{body}}}
   </body>
+  </head>
 
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css"/>
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="/assets/vendor/popper.js/popper.min.js"></script>
+  <script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="/assets/vendor/feather-icons/feather.js"></script>
     <script> feather.replace()</script>
+  {{#each styles}}
+
+      <link rel='stylesheet' href={{this}} />
+  {{/each}}
+
 </html>

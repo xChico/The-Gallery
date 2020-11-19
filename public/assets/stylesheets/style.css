@@ -1,5 +1,5 @@
 body {
-  max-width: max-content;
+  /*max-width: max-content;*/
   margin:auto;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
@@ -11,4 +11,10 @@ a {
   margin-top:5px;
   margin-bottom:10px;
 
+}
+
+#title{
+  background-image: url("../images/Front.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }

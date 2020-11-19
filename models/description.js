@@ -1,28 +1,24 @@
-const _description_key = Symbol('key')
-const _description_title= Symbol('title')
-const _description_body= Symbol('body')
 
-exports.Description = class Description{
-    constructor(key,title, body){
-        this[_description_key]=key
-        this[_description_title]=title
-        this[_description_body]=body
+const mongoose = require('mongoose')
+const DescriptionSchema = new mongoose.Schema({
+    title:{
+        type: String,
+        required:[true, 'Art work name is required'],
+        minlength: [3, 'Minimum Title Length is 2 characters']
+    },
+    artist:{
+        type: String,
+        required:[true, 'Name of Author is required'],
+        minlength: [2, 'Minimum Title Length is 2 characters']
+    },
 
+    body:{
+        type: String,
+        required: [true, 'Art description is required']
     }
-    get key(){return this[_description_key]}
-    get title(){return this[_description_title]}
-    set title(newTitle){this[_description_title]=newTitle}
-    get body(){return this[_description_body]}
-    set body(newBody){this[_description_body] = newBody}
+})
 
-}
 
-exports.AbstractDescriptionStore = class AbstractDescriptionStore{
-    async close(){}
-    async update(key, title, body){}
-    async create (key, title, body){}
-    async read(key){}
-    async destroy(key){}
-    async keyList(){}
-    async count(){}
-}
+DescriptionSchema.set('toObject', {getters: true, virtuals: true})
+exports.Description = mongoose.model('descriptions', DescriptionSchema)
+

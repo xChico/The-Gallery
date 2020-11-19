@@ -1,0 +1,38 @@
+<!--<form method="POSt" action="/description/destroy/confirm">-->
+<!--    <a class="container-fluid">-->
+<!--        <input type="hidden" name="descriptionID" value ="{{descriptionID}}"/>-->
+
+<!--        -->
+<!--        -->
+
+<!--        <span> <a class="nav-item nav-link active" href="/description/destroy?id={{descriptionID}}"> Delete Submission  </a></span>-->
+
+<!--        <a class="mt-3 btn btn-lg btn-block btn-outline-dark" href="/description/view?id={{id}}"> Cancel </a>-->
+
+
+<!--    </div>-->
+
+
+<!--</form>-->
+
+
+
+<form method="POST" action="/description/destroy/confirm">
+    <a class="container-fluid">
+        <input type="hidden" name="descriptionID" value ="{{descriptionID}}"/>
+
+        <p class="form-text text-center delete-entry"> Delete {{descriptionTitle}}</p>
+        <div class ="form-group row justify-content-center">
+            <br/> <input class="col-auto " type ="submit" value="Delete"/><br/>
+
+
+
+
+    <a class="mt-3 btn btn-lg btn-block btn-outline-dark" href="/description/view?id={{descriptionID}}"> Cancel </a>
+
+
+    </div>
+
+
+</form>
+
