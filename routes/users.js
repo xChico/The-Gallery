@@ -29,9 +29,20 @@ router.get('/login', async(req, res, next)=>{
 })
 
 
-router.post('/login', async (req, res,nect)=>{
+router.post('/login', async (req, res,next)=>{
     await userController.authenticate(req,res)
 })
+
+
+router.get('/logout', async(req, res,next)=>{
+    await userController.loggingOut(req, res, next)
+})
+
+router.get('/my_profile', async(req, res, next)=>{
+        await userController.profile(req,res,next)
+    }
+)
+
 
 
 

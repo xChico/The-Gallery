@@ -16,19 +16,28 @@ router.post('/save', async (req, res, next)=>{
 router.get('/view', async(req, res, next )=>{
     await descriptionController.view(req, res,next)
 
-    }
-)
+})
+//
+router.get('/view_for_all', async(req, res, next )=>{
+    await descriptionController.viewForAll(req, res,next)
+
+})
+
 router.get('/edit', async (req, res, next )=>{
     await descriptionController.edit(req, res,next)
 
 
 })
 
-router.get('/view_all', async (req, res, next)=>{
+router.get('/view_all_description', async (req, res, next)=>{
     await descriptionController.viewAll(req, res,next)
 
 })
+//
+router.get('/view_all_submissions', async (req, res, next)=>{
+    await descriptionController.viewAllSubmissions(req, res,next)
 
+})
 
 
 router.get('/destroy', async function(req, res, next) {
@@ -40,6 +49,9 @@ router.get('/destroy', async function(req, res, next) {
 router.post('/destroy/confirm', async function(req, res, next){
     await descriptionController.destroyConfirm(req,res,next)
 })
+
+
+
 
 
 

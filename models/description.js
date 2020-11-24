@@ -1,4 +1,3 @@
-
 const mongoose = require('mongoose')
 const DescriptionSchema = new mongoose.Schema({
     title:{
@@ -17,8 +16,6 @@ const DescriptionSchema = new mongoose.Schema({
         required: [true, 'Art description is required']
     }
 })
-
-
 DescriptionSchema.set('toObject', {getters: true, virtuals: true})
 exports.Description = mongoose.model('descriptions', DescriptionSchema)
 
