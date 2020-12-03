@@ -1,0 +1,49 @@
+<div class="container-fluid m-2">
+    {{>user_messages}}
+</div>
+
+
+<div class="container-fluid">
+
+    <div class="row justify-content-center mt-2">
+        <h2> Art's Title: </h2>
+    </div>
+    <div class="row justify-content-center mb-4">
+        <h3>  {{submissionTitle}}</h3>
+    </div>
+
+    <div class="row justify-content-center mt-2">
+        <h2> Art: </h2>
+    </div>
+    <div class="row justify-content-center mb-4">
+        <h3>  {{submissionArtFile}}</h3>
+    </div>
+
+    <div class="row justify-content-center mt-5">
+        <h2> Artist's Name: {{submissionArtist}}</h2>
+    </div>
+    <div class="row justify-content-center mt-2 ">
+        <h3>{{submissionArtist}}</h3>
+    </div>
+    <div class="row justify-content-center mt-5 mb-2">
+        <h2> Artist's description for their art: </h2>
+    </div>
+    <div class="row justify-content-center mb-2">
+        <h1> {{submissionBody}}</h1>
+    </div>
+    <nav class="navbar navbar-light justify-content-center mt-2" style="background-color:#ffe5ed">
+        <a  href="/submission/destroy?id={{submissionID}}" class="btn btn-outline-danger nav-Link active" role="button" aria-pressed="true"> Delete Submission </a>
+        <a  href="/submission/edit?id={{submissionID}}" class="btn btn-outline-light nav-Link active" role="button" aria-pressed="true"> Edit Submission </a>
+
+    </nav>
+</div>
+
+</div>
+
+
+
+
+
+
+
+

@@ -16,10 +16,10 @@ const UserSchema = new Schema({
         }
     },
 
-    description: [
+    submission: [
         {
             type: SchemaTypes.ObjectID,
-            ref: "Description"
+            ref: "Submission"
         }
     ]
 })

@@ -1,0 +1,35 @@
+
+
+
+<div>
+    <div class="container-fluid ">
+        <div class="one">
+            <h2> You sure you want to delete following submission? </h2>
+        </div>
+    </div>
+</div>
+<div class="row justify-content-center mb-4">
+    <h3>  {{submissionTitle}}</h3>
+</div>
+<form method="POST" action="/submission/destroy/confirm">
+    <a class="container-fluid justify-content-center"> </a>
+
+    <input type="hidden" name="submissionID" value="{{submissionID}}"/>
+
+
+
+    <nav class="navbar navbar-light justify-content-center mt-2" style="background-color:#ffe5ed">
+
+        <br/> <input class="btn btn-danger navbar-brand  text-center mt-1" type="submit" value="Delete"/><br/>
+        <li></li>
+        <a href="/submission/view_all_submissions_reg_user?id={{submissionID}}"
+        class="btn btn-pill btn-light navbar-brand  text-center mt-1"
+        role="button"
+        aria-pressed="true">
+        Cancel</a>
+
+
+    </nav>
+
+</form>
+

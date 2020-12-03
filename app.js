@@ -5,27 +5,28 @@ const path = require('path')
 const logger = require('morgan')
 const http = require('http')
 const session = require('express-session')
-const MemoryStore=require('memorystore')(session)
-const connectFlash=require('connect-flash')
-const mongoose=require('mongoose')
+const MemoryStore = require('memorystore')(session)
+const connectFlash = require('connect-flash')
+const mongoose = require('mongoose')
 const passport = require('passport')
-const { User }= require('./models/user')
+const {User} = require('./models/user')
+
 
 mongoose.connect(process.env.DB_URL,
     {
-    useNewUrlParser:true,
-    userUnifiedTopology:true,
-    useCreateIndex: true
+        useNewUrlParser: true,
+        userUnifiedTopology: true,
+        useCreateIndex: true
     }
-).catch(err=>{
-        console.log(err)
-    })
+).catch(err => {
+    console.log(err)
+})
 
 
 const appsupport = require('./appsupport')
 const indexRouter = require('./routes/index')
-const descriptionRouter = require('./routes/description')
-const usersRouter=require('./routes/users')
+const submissionRouter = require('./routes/submission')
+const usersRouter = require('./routes/users')
 
 
 const app = express()
@@ -67,6 +68,12 @@ passport.deserializeUser(User.deserializeUser())
 
 
 app.use(express.static(path.join(__dirname, 'public')))
+
+
+
+
+
+
 app.use('/assets/vendor/bootstrap', express.static(path.join(__dirname, 'node_modules', 'bootstrap', 'dist')))
 app.use('/assets/vendor/jquery', express.static(path.join(__dirname,'node_modules', 'jquery', 'dist')))
 app.use('/assets/vendor/popper.js', express.static(path.join(__dirname, 'node_modules', 'popper.js', 'dist', 'umd')))
@@ -85,7 +92,7 @@ app.use((req,res,next)=>{
 
 
 app.use('/', indexRouter)
-app.use('/description' , descriptionRouter)
+app.use('/submission' , submissionRouter)
 app.use('/users', usersRouter)
 
 

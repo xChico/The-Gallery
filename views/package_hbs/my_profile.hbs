@@ -1,17 +1,31 @@
+<div class="container-fluid m-2">
+    {{>user_messages}}
+</div>
 <div class="container-fluid ">
-    <div class="row justify-content-center mt-2">
-        <h2> First Name: {{currentUser.name.first }} </h2>
-    </div>
-    <div class="row justify-content-center mb-4">
-        <h2> Last Name:   {{currentUser.name.last}}</h2>
-    </div>
-    <div class="row justify-content-center mt-5">
-        <h2> Email address: {{currentUser.email}}</h2>
-    </div>
-    <div class="row justify-content-center mt-2 ">
-        <h2>Password: {{currentUser.password}}</h2>
-    </div>
+    <div class="one">
+        <div class="row justify-content-center mt-2">
+            <h2> First Name: {{currentUser.name.first }} </h2>
+        </div>
+        <div class="row justify-content-center mb-4">
+            <h2> Last Name:   {{currentUser.name.last}}</h2>
+        </div>
+        <div class="row justify-content-center mt-5">
+            <h2> Email address: {{currentUser.email}}</h2>
+        </div>
 
+
+        <nav class="navbar navbar-light justify-content-center mt-2" style="background-color:#ffe5ed">
+
+            <a href="/users/info_changes" class="btn btn-pill btn-light nav-brand mt-2" role="button" aria-pressed="true">
+                Change Personal Info/Email </a>
+            <li></li>
+            <a href="/users/profile_changes" class="btn btn-pill btn-light nav-brand mt-2" role="button" aria-pressed="true">
+                Change Password </a>
+
+        </nav>
+    </div>
+</div>
+</div>
 
 </div>
 

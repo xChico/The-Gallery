@@ -1,28 +1,34 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>{{tname}}</title>
 
-  <body>
-  {{> header}}
-<!--  <img src="/assets/images/Front.png" alt = "front" class = "center mt-1"/>-->
+<body>
+{{> header}}
 
-  {{{body}}}
-  </body>
-  </head>
+{{{body}}}
+</body>
+</head>
 
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css"/>
-  <script src="/assets/vendor/jquery/jquery.min.js"></script>
-  <script src="/assets/vendor/popper.js/popper.min.js"></script>
-  <script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/assets/vendor/feather-icons/feather.js"></script>
-    <script> feather.replace()</script>
-  {{#each styles}}
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css"/>
+<script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/popper.js/popper.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="/assets/vendor/feather-icons/feather.js"></script>
+<script> feather.replace()</script>
+{{#each styles}}
 
-      <link rel='stylesheet' href={{this}} />
-  {{/each}}
+    <link rel='stylesheet' href={{this}} />
+{{/each}}
+
+<footer class = "footer">
+    <div class = "container">
+        <span class="text-muted"> ©2020 Miriam Chico</span>
+    </div>
+</footer>
+
 
 </html>

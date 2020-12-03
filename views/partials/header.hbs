@@ -1,283 +1,65 @@
 <header>
-<div class="container-fluid" id="title" >
-    <h1 class="justify-content-center">{{title}}</h1>
-</div>
-    <nav class="navbar navbar-expand-lg navbar-light "style="background-color:#ffe5ed">
-        <a class="navbar-brand {{isHomeActive}} ml-2" href="/"><i data-feather="home"></i></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="container-fluid" id="title">
+        <h1 class="justify-content-center">{{title}}</h1>
+    </div>
+
+    <div class="container-fluid justify-content-center">
+        <nav class="navbar navbar-expand-lg navbar-light " style="background-color:#ffe5ed">
+
+            <a href="/" class="  btn btn-pill btn-light navbar-brand {{isHomeActive}} mt-1 " role="button"
+               aria-pressed="true">
+                <i data-feather="home"></i></a>
+
+            <a href="/submission/view_all_submission_for_public"
+               class="btn btn-pill btn-light navbar-brand {{isViewAllSubmissionsForPublicActive}} text-center mt-1"
+               role="button"
+               aria-pressed="true">
+                View All Artwork</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-Link {{isAddDescriptionActive}} mr-5 ml-5" href="/description/add">Add Submission</a>
-                        <a class="nav-Link {{isViewAllDescriptionActive}}" href="/description/view_all"><i data-feather="list"></i>
-                </li>
-            </ul>
-            <a class="nav-brand {{isRegisterActive}} text-center" href="/users/register">Register</a>
-            <a class="nav-brand {{isLoginActive}} text-center ml-5 mr-5" href="/users/login">Login</a>
-        </div>
+            <li class="nav-item active justify-content-center ">
+                {{#unless loggedIn}}
+                    <li></li>
+                    <a href="/users/register"
+                       class=" btn btn-pill btn-light nav-brand {{isRegisterActive}} mt-1  " role="button"
+                       aria-pressed="true"> Register</a>
+                    <li></li>
+                    <a href="/users/login"
+                       class="btn btn-pill btn-light nav-brand  {{isLoginActive}}  mt-1" role="button"
+                       aria-pressed="true"> Login</a>
+                {{else}}
+
+                    <div class="row d-md-block">  </li>
+                </ul>
+
+                    <a href="/submission/add"
+                       class="col-md-2 btn btn-pill btn-light nav-brand mt-1 {{isAddSubmissionActive}}"
+                       role="button" aria-pressed="true"> Add Submission</a>
+                    <li></li>
+                    <a href="/submission/view_all_submissions_reg_user"
+                       class="col-md-2 btn btn-pill btn-light nav-brand mt-1 {{isViewAllSubmissionsForPublicActive}}"
+                       role="button"
+                       aria-pressed="true"> View Your Submissions</a>
+                    <li></li>
+                    <a href="/users/my_profile" class="col-md-2 btn btn-pill btn-ghost-light nav-brand  mt-1"
+                       role="button"
+                       aria-pressed="true"> Hi, {{currentUser.name.first}}!</a>
+                    <li></li>
+                    <a href="/users/logout" class="col-md-2 btn btn-pill btn-light nav-brand mt-1 " role="button"
+                       aria-pressed="true"> Log Out</a>
+
+                {{/unless}}
+
+            </div>
+    </div>
     </nav>
+    </div>
 
-
-
-
-
-
-
-<!--    -->
-<!--    <nav class="navbar nav-bar-expand-sm  navbar-dark" style="background-color:#ffe5ed">-->
-<!--        <div class="container-fluid">-->
-<!--        <a class="navbar-brand {{isHomeActive}}" href="/"><i data-feather="home"></i></a>-->
-<!--        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"-->
-<!--                aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">-->
-<!--            <span class="navbar-toggler-icon"></span>-->
-<!--        </button>-->
-<!--        <div class="collapse navbar-collapse" id="basicExampleNav">-->
-<!--            <ul class="navbar-nav justify-content-center align-content-center">-->
-<!--                <li class="nav-item active">-->
-<!--                    <a class="nav-Link {{isAddDescriptionActive}} " href="/description/add"><i data-feather="edit-2"></i></a>-->
-<!--                </li>-->
-<!--                <li class = "nav-item ">-->
-<!--                    <a class="nav-Link {{isViewAllDescriptionActive}}" href="/description/view_all"><i data-feather="list"></i></a>-->
-<!--                </li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-brand {{isRegisterActive}} text-center" href="/users/register">Register</a>-->
-<!--                </li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-brand {{isLoginActive}} text-center" href="/users/login">Login</a>-->
-
-<!--                </li>-->
-<!--            </ul>-->
-<!--        </div>-->
-<!--        </div>-->
-<!--    </nav>-->
-<!--</header>-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--<nav class="navbar nav-bar-expand-sm  navbar-dark" style="background-color:#ffe5ed">-->
-
-<!--    <a class="nav-Link {{isHomeActive}}" href="/"><i data-feather="home"></i></a>-->
-
-
-<!--    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"-->
-<!--            aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">-->
-
-<!--        <a class="nav-Link {{isRegisterActive}} text-center" href="/users/register">Register</a>-->
-<!--        <li></li>   <li></li>-->
-
-
-<!--        <a class="nav-Link {{isLoginActive}} text-center" href="/users/login">Login</a>-->
-<!--        <li></li>   <li></li>-->
-
-<!--        <span class="navbar-toggler-icon"></span>-->
-<!--    </button>-->
-
-
-<!--    <div class="collapse navbar-collapse" id="basicExampleNav">-->
-
-<!--        <ul class="navbar-nav justify-content-center align-content-center">-->
-<!--            <li class="nav-item active">-->
-
-
-<!--            </li>-->
-<!--            <u class="nav justify-content-center align-content-center">-->
-
-<!--              <a class="nav-Link {{isAddDescriptionActive}} " href="/description/add"><i data-feather="edit-2"></i></a>-->
-
-<!--            <li></li> <li></li>-->
-<!--               <a class="nav-Link {{isViewAllDescriptionActive}}" href="/description/view_all"><i data-feather="list"></i></a>-->
-<!--                <li></li> <li></li>-->
-
-<!--            </u>-->
-
-<!--        </ul>-->
-
-<!--    </div>-->
-
-
-<!--</nav>-->
-
-
-
-
-
-
-
-<!--<nav class="navbar nav-bar-expand-sm justify-content-center navbar-dark " style="background-color:#ffe5ed">-->
-
-<!--    <li>-->
-<!--        <a class="nav-Link {{isHomeActive}}" href="/"><i data-feather="home"></i></a>-->
-<!--    </li>-->
-<!--    <button class="navbar-toggler" type="button"-->
-<!--            data-toggle="collapse" data-target="#navbarSupportedContent"-->
-<!--            aria-controls="navbarSupportedContent"-->
-<!--            aria-expanded="false" aria-label="Toggle Navigation">-->
-<!--        <span class="navbar-toggler-icon"></span>-->
-<!--    </button>-->
-
-<!--    <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
-
-<!--        <u class="nav justify-content-center align-content-center">-->
-
-<!--            <li>-->
-<!--                <a class="nav-Link {{isAddDescriptionActive}} " href="/description/add"><i data-feather="edit-2"></i></a>-->
-<!--            </li>-->
-<!--            <li>-->
-<!--                <a class="nav-Link {{isViewAllDescriptionActive}}" href="/description/view_all"><i data-feather="list"></i></a>-->
-<!--            </li>-->
-
-
-<!--        </u>-->
-
-<!--    </div>-->
-<!--    <a class="nav-Link {{isRegisterActive}} text-center" href="/users/register">Register</a>-->
-<!--    <li></li>-->
-
-
-<!--    <a class="nav-Link {{isLoginActive}} text-center" href="/users/login">Login</a>-->
-
-<!--    </li>-->
-<!--</nav>-->
-
-
-
-<!--<div class="container-fluid " id="title" >-->
-<!--    <h1 class="justify-content-center">{{title}}</h1>-->
-<!--</div>-->
-<!--<nav class="navbar nav-bar-expand-sm justify-content-center navbar-dark " style="background-color:#ffe5ed">-->
-
-
-<!--        <button class="navbar-toggler" type="button"-->
-<!--                data-toggle="collapse" data-target="#navbarSupportedContent"-->
-<!--                aria-controls="navbarSupportedContent"-->
-<!--                aria-expanded="false" aria-label="Toggle Navigation">-->
-<!--            <span class="navbar-toggler-icon"></span>-->
-<!--        </button>-->
-<!--        <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
-
-<!--            <u class="nav justify-content-center align-content-center">-->
-<!--            <li>-->
-<!--                <a class="nav-Link {{isHomeActive}}" href="/"><i data-feather="home"></i></a>-->
-<!--            </li>-->
-<!--            <li>-->
-<!--                <a class="nav-Link {{isAddDescriptionActive}} " href="/description/add"><i data-feather="edit-2"></i></a>-->
-<!--            </li>-->
-<!--            <li>-->
-<!--                <a class="nav-Link {{isViewAllDescriptionActive}}" href="/description/view_all"><i data-feather="list"></i></a>-->
-<!--            </li>-->
-
-<!--            <a class="nav-Link {{isRegisterActive}} text-center" href="/users/register">Register</a>-->
-<!--            <li></li>-->
-
-
-<!--            <a class="nav-Link {{isLoginActive}} text-center" href="/users/login">Login</a>-->
-
-<!--            </li>-->
-<!--            </u>-->
-
-<!--    </div>-->
-<!--</nav>-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--<header>-->
-<!--    <a class="navbar-text col"  id="navText">{{title}}</a>-->
-<!--    <nav class="navbar navbar-expand-md navbar-expand-sm justify-content-center" style="background-color:#ffe5ed" >-->
-
-<!--            <div class="navbar-header mb-1">-->
-<!--                <div class = "navbar-toggler" type="button"-->
-<!--                        data-toggle="collapse"-->
-<!--                        data-target="#navbarSupportedContent"-->
-<!--                        aria-controls="navBarSupportedContent"-->
-<!--                        aria-expanded="false" aria-label="Toggle Navigation">-->
-<!--                    <span class="navbar-toggler-icon"></span>-->
-
-
-<!--                </div>-->
-
-<!--            <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
-
-
-<!--                    <li>-->
-<!--                        <a class="nav-Link {{isHomeActive}}" href="/"><i data-feather="home"></i></a>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <a class="nav-Link {{isAddDescriptionActive}} " href="/description/add"><i data-feather="edit-2"></i></a>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <a class="nav-Link {{isViewAllDescriptionActive}}" href="/description/view_all"><i data-feather="list"></i></a>-->
-<!--                    </li>-->
-
-<!--                    <a class="nav-Link {{isRegisterActive}} text-center" href="/users/register">Register</a>-->
-<!--                    <li></li>-->
-
-
-<!--                    <a class="nav-Link {{isLoginActive}} text-center" href="/users/login">Login</a>-->
-
-<!--                    </li>-->
-<!--                </ul>-->
-
-<!--            </div>-->
-<!--            </div>-->
-<!--    </nav>-->
-
-
-<!--</header>-->
-
-
-<!--    <h1 class="justify-content-center">{{title}}</h1>-->
-<!--    </div>-->
-<!--    <nav class="navbar navbar-light justify-content-center" style="background-color:#ffe5ed">-->
-<!--            <a class="nav-item nav-link active" href="/"><i data-feather="home"></i></a>-->
-<!--            <a class="nav-item nav-link active" href="/description/add"><i data-feather="edit-2"></i></a>-->
-<!--            <a class="nav-item nav-link active" href="/description/view_all"><i data-feather="list"></i></a>-->
-<!--        <li></li>-->
-
-<!--        <a class="nav-Link {{isRegisterActive}} text-center" href="/users/register">Register</a>-->
-<!--       <li></li>-->
-
-
-<!--        <a class="nav-Link {{isLoginActive}} text-center" href="/users/login">Login</a>-->
-
-
-<!--        </div>-->
-<!--    </nav>-->
+</header>

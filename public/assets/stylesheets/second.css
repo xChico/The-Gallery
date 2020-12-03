@@ -5,6 +5,15 @@ body {
     background-color: ghostwhite;
 }
 
+
+.one{
+    text-align: center;
+}
+.tales {
+    width: 100%;
+}
+
+
 .center{
     display:block;
     margin-left:auto;
@@ -50,6 +59,12 @@ h1{
     text-align:center;
 
 }
+.container{
+    padding-top:60px;
+}
+
+
+
 
 .carousel-control-prev, .carousel-control-next/*, .carousel-indicators */ {
     filter: invert(100%);

@@ -1,0 +1,70 @@
+<form method="post" , action="/submission/save" class="mt-2">
+    <div class="container-fluid">
+        <input type="hidden" name="saveMethod"
+               value="{{#if isCreate}}create{{else}}update{{/if}}"/>
+
+        <div class="form-group row justify-content-center mt-2">
+            <div class="col-2 text-right font-weight-bold">
+                <label class="col-form-label" for="submissionID">ID:</label>
+            </div>
+            <div class=" row justify-content-center">
+                <label class="col-form-label" name="submissionID">{{submissionID}}</label>
+
+                <input type="hidden" name="submissionID" value="{{submissionID}}"/>
+            </div>
+        </div>
+
+        <div class="form-group row justify-content-center">
+            <div class="col-2 text-right font-weight-bold">
+                <label class="col-form-label" for="title">Artwork title:</label>
+
+            </div>
+            <div class="col-9">
+
+                <input class="form-control" type="text" name="title" value="{{submissionTitle}}"><br/>
+
+            </div>
+        </div>
+
+        <div class="container-fluid">
+
+            <div class="form-group row justify-content-center">
+                <form method="POST" action="/upload-art" enctype="multipart/form-data">
+                    <div>
+
+                        <label class="font-weight-bold"> Select your art file:</label>
+
+                        <input type="file" name="artFile"/>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <div class="form-group row justify-content-center">
+            <div class="col-2 text-right font-weight-bold">
+                <label class="col-form-label" for="title">Artist Name:</label>
+
+            </div>
+            <div class="col-9">
+
+                <input class="form-control" type="text" name="artist" value="{{submissionArtist}}"><br/>
+
+            </div>
+        </div>
+        <div class="col-2 text-right font-weight-bold">
+            <label class="col-form-label" for="title">Artist's Art Description:</label>
+        </div>
+        <div class="form-group row justify-content-center">
+            <textarea class="col-11 form-control" rows=5 name="body">{{submissionBody}}</textarea><br/>
+        </div>
+        <div class="form-group row justify-content-center">
+            <input class="col-2" type="submit" value="Submit"/>
+        </div>
+    </div>
+</form>
+
+
+
+
+
